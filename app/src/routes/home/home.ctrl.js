@@ -1,8 +1,8 @@
 'use strict';
 
 const user = {
-    id: ['hello', 'wood', 'krockseed'],
-    password: ['369369', '5577', '7742'],
+    id: ['qq', 'ww', 'ee'],
+    password: ['1', '23', '123123'],
 };
 
 const output = {
@@ -18,20 +18,20 @@ const process = {
     login: (req, res) => {
         const id = req.body.id;
         const password = req.body.password;
+        const response = {
+            success: false,
+            msg: '로그인 실패!',
+        };
 
         if (user.id.includes(id)) {
             const idx = user.id.indexOf(id);
             if (user.password[idx] === password) {
-                return res.json({
-                    success: true,
-                });
+                response.success = true;
+                return res.json(response);
             }
         } 
-
-        return res.json({
-            success: false,
-            msg: '로그인에 실패하셨습니다.'
-        });
+    
+        return res.json(response);
     },
 };
 

@@ -31,7 +31,7 @@ function login() {
         //console.log(`res.success = ${res.success}`);
         if (res.success) {
             location.href = '/';
-            //console.log('heelo ' + res);
+            console.log('heelo ' + res);
         } else {
             alert(res.msg);
         }

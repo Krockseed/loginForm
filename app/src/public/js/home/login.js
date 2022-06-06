@@ -1,8 +1,5 @@
 'use strict';
 
-// const { json } = require("body-parser");
-// const { application } = require("express");
-
 const id = document.querySelector('#id'),
     paswrd = document.querySelector('#paswrd'),
     loginBtn = document.querySelector('button');
@@ -27,9 +24,7 @@ function login() {
         body: JSON.stringify(req),
     }).then((res) => res.json()) //성공 시 루트화면으로 보내고 실패 시 알람을 띄운다
     .then((res) => {
-        //console.log(res);
-        //console.log(`res.success = ${res.success}`);
-        if (res.success) {
+      if (res.success) {
             location.href = '/';
             console.log('heelo ' + res);
         } else {
